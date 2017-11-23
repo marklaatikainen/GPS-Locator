@@ -81,7 +81,7 @@ function updateMyLocation(id, name, lat, lon, visibility) {
         $.ajax
             ({
                 type: "POST",
-                url: 'http://mobiili.silte.fi/mark/api.php',
+                url: '/api.php',
                 dataType: 'json',
                 async: false,
                 data: request,
@@ -99,7 +99,7 @@ function updateMyLocation(id, name, lat, lon, visibility) {
 function getUser(id) {
     if (id != null && id != "") {
         $.ajax({
-            url: "http://mobiili.silte.fi/mark/api.php",
+            url: "/api.php",
             type: "get",
             data: {
                 id: id
@@ -124,7 +124,7 @@ function getUser(id) {
 
 function getUsers() {
     deleteMarkers();
-    $.get("http://mobiili.silte.fi/mark/api.php", function (data) {
+    $.get("/api.php", function (data) {
         var obj = data.data;
         $("#onlineUsers").html('');
         if (typeof (obj) != "undefined") {
