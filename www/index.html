@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;" />
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>GPS Locator</title>
+</head>
+<body>
+    <div data-role="tabs" id="tabs">
+        <div id="settingspage" class="ui-body-d ui-content page">
+            <h1>GPS Locator</h1>
+            <div class="inner">
+                <label for="nicname">Nimimerkki:</label>
+                <input name="nickname" id="nickname" value="" type="text">
+                <a href="#" id="saveBut" class="ui-btn ui-corner-all ui-btn-inline">Tallenna</a>
+                <div class="online">
+                    <label for="online">Näkyvyys:</label>
+                    <input data-role="flipswitch" name="online" id="online" type="checkbox">
+                </div>
+                <div id="onlineUsers"></div>
+            </div>
+        </div>
+
+        <div id="mappage" class="ui-body-d ui-content page">
+            <h1>GPS Locator</h1>
+            <div id="kartta"></div>
+        </div>
+        <div data-role="navbar" id="navbar">
+            <ul>
+                <li><a href="#settingspage" onclick="settingsPage();" data-ajax="false" class="ui-btn-active" data-icon="gear">Settings</a></li>
+                <li><a href="#mappage" onclick="mapPage();" data-ajax="false" data-icon="eye">Map</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="scripts/jquery-2.1.4.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUlbBrTuQAxC437BtzxwOukbS0o1NAd64" async defer></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
